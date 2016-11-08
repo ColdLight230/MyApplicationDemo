@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+
+    defaultConfig {
+        applicationId "com.hhly.myapplicationdemo"
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode version_code
+        versionName version_name
+    }
+    buildTypes {
+        debug{
+            applicationIdSuffix '.debug'
+            //会在BuildConfig 中生成常量 用于区别开发、测试、正式环境
+            buildConfigField 'String', 'API_HOST_URL', '"http://gank.io/api/"'
+            manifestPlaceholders = [APP_NAME: '开发版']
+        }
+
+        //测试环境
+        tmode.initWith(buildTypes.debug)
+        tmode{
+            minifyEnabled  false
+            applicationIdSuffix '.test'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'API_HOST_URL', '"http://gank.io/api/"'
+            manifestPlaceholders = [APP_NAME: '测试版']
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'API_HOST_URL', '"http://gank.io/api/"'
+            manifestPlaceholders = [APP_NAME: '正式版']
+        }
+    }
+    dataBinding{
+        enabled = true
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$espresso_version", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    // support libs
+    compile "com.android.support:support-v4:$support_lib_version"
+    compile "com.android.support:appcompat-v7:$support_lib_version"
+    compile "com.android.support:recyclerview-v7:$support_lib_version"
+    compile "com.android.support:cardview-v7:$support_lib_version"
+    compile "com.android.support:design:$support_lib_version"
+    compile "com.android.support:percent:$support_lib_version"
+
+    // ui
+    compile "com.jaeger.statusbaruitl:library:$statusbar_util_version"
+    compile "com.github.chrisbanes:PhotoView:$photo_view_version"
+    compile "com.yqritc:android-scalablevideoview:$video_view_version"
+
+    // rx
+    compile "com.trello:rxlifecycle:$rxlifecycler_version"
+    compile "com.trello:rxlifecycle-components:$rxlifecycler_version"
+    compile "com.tbruyelle.rxpermissions:rxpermissions:$rxpermission_version@aar"
+
+    // dagger
+    compile "com.google.dagger:dagger:$dagger_version"
+    apt "com.google.dagger:dagger-compiler:$dagger_version"
+    provided "javax.annotation:jsr250-api:$javax_annotation_version"
+
+    // glide
+    compile "com.github.bumptech.glide:glide:$glide_version"
+    compile "com.github.bumptech.glide:okhttp3-integration:$glide_okhttp_integration_version@aar"
+    compile "jp.wasabeef:glide-transformations:$glide_transform_version"
+
+    // adapter
+    compile "com.github.CymChad:BaseRecyclerViewAdapterHelper:$recycler_adapter_version"
+
+    //photoview
+    compile "com.github.chrisbanes:PhotoView:$photo_view_version"
+
+    // test
+    testCompile "junit:junit:$junit_version"
+    testCompile "org.mockito:mockito-all:$mockito_version"
+    testCompile "org.robolectric:robolectric:$robolectric_version"
+    testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
+
+    compile project(':data')
+}

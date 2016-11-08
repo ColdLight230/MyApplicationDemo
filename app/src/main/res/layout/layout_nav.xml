@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/nav_header_main"
+            layout="@layout/nav_header_main"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#dcdcdc"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="#dcdcdc"/>
+
+                <com.hhly.myapplicationdemo.weight.NavigationItem
+                    android:id="@+id/navigation_item_android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:nav_item_icon_src="@drawable/ic_android_logo"
+                    app:nav_item_title="Android"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#dcdcdc"/>
+
+                <com.hhly.myapplicationdemo.weight.NavigationItem
+                    android:id="@+id/navigation_item_ios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:nav_item_icon_src="@drawable/ic_android_logo"
+                    app:nav_item_title="iOS"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#dcdcdc"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="#dcdcdc"/>
+
+                <com.hhly.myapplicationdemo.weight.NavigationItem
+                    android:id="@+id/navigation_item_girl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:nav_item_icon_src="@drawable/ic_android_logo"
+                    app:nav_item_title="Girl"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#dcdcdc"/>
+
+                <com.hhly.myapplicationdemo.weight.NavigationItem
+                    android:id="@+id/navigation_item_music"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:nav_item_icon_src="@drawable/ic_android_logo"
+                    app:nav_item_title="Music"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#dcdcdc"/>
+
+                <com.hhly.myapplicationdemo.weight.NavigationItem
+                    android:id="@+id/navigation_item_vedio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:nav_item_icon_src="@drawable/ic_android_logo"
+                    app:nav_item_title="Vedio"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#dcdcdc"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="8dp"
+                    android:background="#dcdcdc"/>
+
+                <com.hhly.myapplicationdemo.weight.NavigationItem
+                    android:id="@+id/navigation_item_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:nav_item_icon_src="@drawable/ic_android_logo"
+                    app:nav_item_title="Setting"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#dcdcdc"/>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</layout>

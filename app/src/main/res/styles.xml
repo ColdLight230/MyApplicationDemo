@@ -1,0 +1,102 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/window_background_color</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SearchTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">#426bf2</item>
+        <item name="android:windowBackground">@color/window_background_color</item>
+    </style>
+
+    <style name="SearchTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SearchTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar"/>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="NavButtonStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+    </style>
+
+    <style name="NavTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/txt_light_gray</item>
+    </style>
+
+    <style name="BottomBarStyle">
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/color_check_text</item>
+    </style>
+
+    <style name="HomeItemPortraitRight">
+        <item name="android:layout_marginLeft">@dimen/small_horizontal_margin</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/small_horizontal_margin
+        </item>
+        <item name="android:layout_toEndOf" tools:targetApi="jelly_bean_mr1">@id/portrait</item>
+        <item name="android:layout_toRightOf">@id/portrait</item>
+    </style>
+
+    <style name="HomeItemPortraitRight.Title" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:layout_marginLeft">@dimen/small_horizontal_margin</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/small_horizontal_margin
+        </item>
+        <item name="android:textColor">@color/txt_black</item>
+        <item name="android:layout_toEndOf" tools:targetApi="jelly_bean_mr1">@id/portrait</item>
+        <item name="android:layout_toRightOf">@id/portrait</item>
+    </style>
+
+    <style name="TabLayoutTextAppearanceInverse" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/txt_tab_title</item>
+    </style>
+
+    <style name="login_text_common">
+        <item name="android:textSize">@dimen/login_title_size</item>
+        <item name="android:textColor">@color/login_txt_white</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="register_edit_common">
+        <item name="android:textSize">@dimen/register_title_size</item>
+        <item name="android:textColor">@color/txt_light_gray</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="set_password_common">
+        <item name="android:textSize">@dimen/set_password_title_size</item>
+        <item name="android:textColor">@color/txt_light_gray</item>
+        <item name="android:background">@null</item>
+    </style>
+</resources>

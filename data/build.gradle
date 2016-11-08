@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'realm-android'
+android {
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+
+    defaultConfig {
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode version_code
+        versionName version_name
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$espresso_version", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:$support_lib_version"
+
+    // Retrofit
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
+
+    // rx
+    compile "io.reactivex:rxjava:$rxjava_version"
+    compile "io.reactivex:rxandroid:$rxandroid_version"
+
+    // dagger
+    compile "com.google.dagger:dagger:$dagger_version"
+    apt "com.google.dagger:dagger-compiler:$dagger_version"
+    provided "javax.annotation:jsr250-api:$javax_annotation_version"
+
+    // log
+    compile "com.orhanobut:logger:$logger_version"
+
+    // stetho
+    compile "com.facebook.stetho:stetho:$stetho_version"
+    compile "com.facebook.stetho:stetho-okhttp3:$stetho_version"
+
+    // test
+    testCompile "junit:junit:$junit_version"
+    testCompile "org.mockito:mockito-all:$mockito_version"
+    testCompile "org.robolectric:robolectric:$robolectric_version"
+    testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
+}
