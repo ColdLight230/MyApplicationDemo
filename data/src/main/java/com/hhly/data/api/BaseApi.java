@@ -1,15 +1,14 @@
 package com.hhly.data.api;
 
+import com.hhly.data.bean.AndroidBean;
 import com.hhly.data.bean.HistoryInfoBean;
 import com.hhly.data.bean.MeiZhiPictureBean;
 import com.hhly.data.bean.ResultBaseBean;
-import com.hhly.data.bean.TestBean;
 
 import java.util.List;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -24,4 +23,7 @@ public interface BaseApi {
 
     @GET("data/福利/{pageSize}/{pageIndex}")
     Observable<ResultBaseBean<List<MeiZhiPictureBean>>> getMeiZhiPicture(@Path("pageSize") int pageSize, @Path("pageIndex") int pageIndex);
+
+    @GET("data/Android/{pageSize}/{pageIndex}")
+    Observable<ResultBaseBean<List<AndroidBean>>> getAndroidArticle(@Path("pageSize") int pageSize, @Path("pageIndex") int pageIndex);
 }

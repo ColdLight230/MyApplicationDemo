@@ -3,10 +3,10 @@ package com.hhly.data.repo;
 import android.content.Context;
 
 import com.hhly.data.api.BaseApi;
+import com.hhly.data.bean.AndroidBean;
 import com.hhly.data.bean.HistoryInfoBean;
 import com.hhly.data.bean.MeiZhiPictureBean;
 import com.hhly.data.bean.ResultBaseBean;
-import com.hhly.data.bean.TestBean;
 
 import java.util.List;
 
@@ -39,6 +39,11 @@ public class DataManager {
     public Observable<List<MeiZhiPictureBean>> getMeiZhiPictures(int pageSize, int pageIndex){
         return mBaseApi.getMeiZhiPicture(pageSize, pageIndex)
                 .compose(DataManager.<List<MeiZhiPictureBean>>handleResult());
+    }
+
+    public Observable<List<AndroidBean>> getAndroidArticle(int pageSize, int pageIndex){
+        return mBaseApi.getAndroidArticle(pageSize, pageIndex)
+                .compose(DataManager.<List<AndroidBean>>handleResult());
     }
 
     private static <T> Observable.Transformer<ResultBaseBean<T>, T> handleResult() {

@@ -14,9 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:label">
-        <activity android:name=".ui.picture.MeiZhiActivity">
-
-        </activity>
         <activity android:name=".PLMediaPlayerActivity"/>
         <activity android:name=".ui.picture.detail.MeiZhiDetailActivity"/>
         <activity android:name=".ui.main.MainActivity">

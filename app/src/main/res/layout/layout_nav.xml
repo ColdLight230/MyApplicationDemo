@@ -45,13 +45,6 @@
                     android:layout_height="1px"
                     android:background="#dcdcdc"/>
 
-                <com.hhly.myapplicationdemo.weight.NavigationItem
-                    android:id="@+id/navigation_item_ios"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:nav_item_icon_src="@drawable/ic_android_logo"
-                    app:nav_item_title="iOS"/>
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"

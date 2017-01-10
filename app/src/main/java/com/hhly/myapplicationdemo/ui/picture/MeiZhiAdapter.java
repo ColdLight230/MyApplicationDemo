@@ -1,7 +1,6 @@
 package com.hhly.myapplicationdemo.ui.picture;
 
 import android.content.Intent;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -35,7 +34,7 @@ public class MeiZhiAdapter extends BaseQuickAdapter<MeiZhiPictureBean> {
 
         BaseViewHolder baseViewHolder = super.onCreateDefViewHolder(parent, viewType);
         ImageView view = baseViewHolder.getView(R.id.img_meizhi);
-
+        //在这里可以对条目进行操作
         int screenWidth = DisplayUtils.getScreenWidth(mContext);
         imgWidth = (screenWidth) / 3;
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imgWidth, 16 * imgWidth / 9);

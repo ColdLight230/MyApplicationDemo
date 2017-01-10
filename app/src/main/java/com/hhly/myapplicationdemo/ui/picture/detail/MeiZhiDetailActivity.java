@@ -3,6 +3,8 @@ package com.hhly.myapplicationdemo.ui.picture.detail;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.hhly.data.bean.MeiZhiPictureBean;
 import com.hhly.myapplicationdemo.R;
@@ -21,6 +23,13 @@ public class MeiZhiDetailActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+          /*set it to be no title*/
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+       /*set it to be full screen*/
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_meizhi_detail);
 
         MeiZhiPictureBean meiZhiPictureBean = getIntent().getParcelableExtra(MEIZHIPICTURE);

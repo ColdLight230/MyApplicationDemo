@@ -39,7 +39,7 @@ public class DataModule {
     //API地址
     public final String API_HOST_URL;
 
-    Context context;
+    Context context ;
 
     public DataModule(Context context, String apiHostUrl) {
         this.API_HOST_URL = apiHostUrl;

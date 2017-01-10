@@ -31,17 +31,16 @@
                 app:subtitleTextColor="@color/color_white"
                 app:theme="@style/AppToolbar"
                 app:title="标题"
-                app:titleTextColor="@color/color_white">
-            </android.support.v7.widget.Toolbar>
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextColor="@color/color_white" />
         </android.support.design.widget.AppBarLayout>
 
         <FrameLayout
             android:id="@+id/fl_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            />
-
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </FrameLayout>
     </android.support.design.widget.CoordinatorLayout>
 
 </layout>

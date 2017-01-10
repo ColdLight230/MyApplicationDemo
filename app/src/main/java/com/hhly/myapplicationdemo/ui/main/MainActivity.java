@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.util.LruCache;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,9 +16,7 @@ import com.hhly.myapplicationdemo.R;
 import com.hhly.myapplicationdemo.core.BaseActivity;
 import com.hhly.myapplicationdemo.databinding.ActivityMainUserBinding;
 import com.hhly.myapplicationdemo.ui.android.AndroidFragment;
-import com.hhly.myapplicationdemo.ui.ios.IOSFragment;
 import com.hhly.myapplicationdemo.ui.picture.MeiZhiFragment;
-import com.jaeger.library.StatusBarUtil;
 
 /**
  * 描    述：
@@ -44,7 +41,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mToolbar = mBinding.appBarMain.toolbar;
         mToolbar.setTitle("Android");
 
-        StatusBarUtil.setColorForDrawerLayout(this,mDrawLayout, ContextCompat.getColor(this, R.color.colorPrimaryDark));
+//        StatusBarUtil.setColorForDrawerLayout(this,mDrawLayout, ContextCompat.getColor(this, R.color.colorPrimaryDark));
 
         //设置toolbar左侧菜单按钮事件
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -58,7 +55,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
 
         mBinding.navLayout.navigationItemAndroid.setOnClickListener(this);
-        mBinding.navLayout.navigationItemIos.setOnClickListener(this);
         mBinding.navLayout.navigationItemGirl.setOnClickListener(this);
         mBinding.navLayout.navigationItemMusic.setOnClickListener(this);
         mBinding.navLayout.navigationItemVedio.setOnClickListener(this);
@@ -73,28 +69,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 mToolbar.setTitle("Android");
                 onResume();
                 break;
-            case R.id.navigation_item_ios:
-                currentFragment = 1;
-                mToolbar.setTitle("iOS");
-                onResume();
-                break;
             case R.id.navigation_item_girl:
-                currentFragment = 2;
+                currentFragment = 1;
                 mToolbar.setTitle("Girl");
                 onResume();
                 break;
             case R.id.navigation_item_music:
-                currentFragment = 3;
+                currentFragment = 2;
                 mToolbar.setTitle("Music");
                 onResume();
                 break;
             case R.id.navigation_item_vedio:
-                currentFragment = 4;
+                currentFragment = 3;
                 mToolbar.setTitle("Vedio");
                 onResume();
                 break;
             case R.id.navigation_item_setting:
-                currentFragment = 5;
+                currentFragment = 4;
                 mToolbar.setTitle("Setting");
                 onResume();
                 break;
@@ -121,18 +112,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         fragment = AndroidFragment.newInstance();
                         break;
                     case 1:
-                        fragment = IOSFragment.newInstance();
+                        fragment = MeiZhiFragment.newInstance();
                         break;
                     case 2:
-                        fragment = MeiZhiFragment.newInstance();
+                        fragment = AndroidFragment.newInstance();
                         break;
                     case 3:
                         fragment = AndroidFragment.newInstance();
                         break;
                     case 4:
-                        fragment = AndroidFragment.newInstance();
-                        break;
-                    case 5:
                         fragment = AndroidFragment.newInstance();
                         break;
                     default:
