@@ -33,8 +33,6 @@ public class DataModule {
     public static final String RESPONSE_CACHE_FILE = "response_cache";
     public static final long RESPONSE_CACHE_SIZE = 10 * 1024 * 1024L;
     public static final long HTTP_CONNECT_TIMEOUT = 10L;
-    public static final long HTTP_READ_TIMEOUT = 30L;
-    public static final long HTTP_WRITE_TIMEOUT = 10L;
 
     //API地址
     public final String API_HOST_URL;

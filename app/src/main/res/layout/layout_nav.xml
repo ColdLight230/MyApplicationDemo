@@ -67,43 +67,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="1px"
                     android:background="#dcdcdc"/>
-
-                <com.hhly.myapplicationdemo.weight.NavigationItem
-                    android:id="@+id/navigation_item_music"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:nav_item_icon_src="@drawable/ic_android_logo"
-                    app:nav_item_title="Music"/>
-
                 <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="#dcdcdc"/>
-
-                <com.hhly.myapplicationdemo.weight.NavigationItem
-                    android:id="@+id/navigation_item_vedio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:nav_item_icon_src="@drawable/ic_android_logo"
-                    app:nav_item_title="Vedio"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="#dcdcdc"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
                     android:layout_marginTop="8dp"
-                    android:background="#dcdcdc"/>
-
-                <com.hhly.myapplicationdemo.weight.NavigationItem
-                    android:id="@+id/navigation_item_setting"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="1px"
+                    android:background="#dcdcdc"/>
+                <com.hhly.myapplicationdemo.weight.NavigationItem
+                    android:id="@+id/navigation_item_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
                     app:nav_item_icon_src="@drawable/ic_android_logo"
-                    app:nav_item_title="Setting"/>
+                    app:nav_item_title="Test"/>
 
                 <View
                     android:layout_width="match_parent"

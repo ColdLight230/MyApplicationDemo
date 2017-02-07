@@ -4,8 +4,6 @@ import java.security.MessageDigest;
 
 /**
  * MD5 加密工具
- * <p/>
- * Created by loshine on 2016/7/5.
  */
 public class MD5Utils {
 

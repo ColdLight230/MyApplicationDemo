@@ -10,7 +10,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.hhly.myapplicationdemo.R;
 import com.hhly.myapplicationdemo.core.BaseActivity;
@@ -25,17 +25,16 @@ import com.hhly.myapplicationdemo.ui.picture.MeiZhiFragment;
  */
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    private ActivityMainUserBinding mBinding;
     private DrawerLayout mDrawLayout;
     private Toolbar mToolbar;
     private int currentFragment;
-    private FrameLayout mFrameLayout;
     private FragmentManager manager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main_user);
+
+        ActivityMainUserBinding mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main_user);
 
         mDrawLayout = mBinding.drawLayout;
         mToolbar = mBinding.appBarMain.toolbar;
@@ -50,15 +49,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 mDrawLayout.openDrawer(GravityCompat.START);
             }
         });
-        mFrameLayout = mBinding.appBarMain.flContent;
         manager = getSupportFragmentManager();
 
 
         mBinding.navLayout.navigationItemAndroid.setOnClickListener(this);
         mBinding.navLayout.navigationItemGirl.setOnClickListener(this);
-        mBinding.navLayout.navigationItemMusic.setOnClickListener(this);
-        mBinding.navLayout.navigationItemVedio.setOnClickListener(this);
-        mBinding.navLayout.navigationItemSetting.setOnClickListener(this);
+        mBinding.navLayout.navigationItemTest.setOnClickListener(this);
     }
 
     @Override
@@ -74,20 +70,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 mToolbar.setTitle("Girl");
                 onResume();
                 break;
-            case R.id.navigation_item_music:
-                currentFragment = 2;
-                mToolbar.setTitle("Music");
-                onResume();
-                break;
-            case R.id.navigation_item_vedio:
-                currentFragment = 3;
-                mToolbar.setTitle("Vedio");
-                onResume();
-                break;
-            case R.id.navigation_item_setting:
-                currentFragment = 4;
-                mToolbar.setTitle("Setting");
-                onResume();
+            case R.id.navigation_item_test:
+                Toast.makeText(getBaseContext(),"test", Toast.LENGTH_SHORT).show();
                 break;
         }
 
@@ -102,9 +86,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     static class FragmentFactory {
 
-        private static LruCache<Integer, Fragment> mFragmentLruCache = new LruCache<>(4);
+        private static LruCache<Integer, Fragment> mFragmentLruCache = new LruCache<>(2);
 
-        public static Fragment get(int position) {
+        static Fragment get(int position) {
             Fragment fragment = mFragmentLruCache.get(position);
             if (fragment == null) {
                 switch (position) {
@@ -114,22 +98,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     case 1:
                         fragment = MeiZhiFragment.newInstance();
                         break;
-                    case 2:
-                        fragment = AndroidFragment.newInstance();
-                        break;
-                    case 3:
-                        fragment = AndroidFragment.newInstance();
-                        break;
-                    case 4:
-                        fragment = AndroidFragment.newInstance();
-                        break;
-                    default:
-                        fragment = AndroidFragment.newInstance();
-                        break;
                 }
                 mFragmentLruCache.put(position, fragment);
             }
             return fragment;
         }
     }
+
 }

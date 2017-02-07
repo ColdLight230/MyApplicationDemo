@@ -10,8 +10,6 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * 对 Glide 图片请求封装
- * <p/>
- * Created by loshine on 2016/7/12.
  */
 public class ImageRequestBuilder {
 
