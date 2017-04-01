@@ -33,7 +33,7 @@
                     android:layout_marginTop="8dp"
                     android:background="#dcdcdc"/>
 
-                <com.hhly.myapplicationdemo.weight.NavigationItem
+                <com.hhly.practice.weight.NavigationItem
                     android:id="@+id/navigation_item_android"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
                     android:layout_marginTop="8dp"
                     android:background="#dcdcdc"/>
 
-                <com.hhly.myapplicationdemo.weight.NavigationItem
+                <com.hhly.practice.weight.NavigationItem
                     android:id="@+id/navigation_item_girl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,8 +72,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="1px"
                     android:background="#dcdcdc"/>
-                <com.hhly.myapplicationdemo.weight.NavigationItem
-                    android:id="@+id/navigation_item_test"
+                <com.hhly.practice.weight.NavigationItem
+                    android:id="@+id/navigation_item_setting"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     app:nav_item_icon_src="@drawable/ic_android_logo"

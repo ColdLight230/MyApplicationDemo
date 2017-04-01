@@ -4,7 +4,7 @@
     <data>
         <variable
             name="picture"
-            type="com.hhly.myapplicationdemo.ui.picture.detail.PictureViewModel"/>
+            type="com.hhly.practice.ui.picture.detail.PictureViewModel"/>
 
     </data>
 

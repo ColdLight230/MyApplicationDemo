@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion compile_sdk_version
@@ -37,9 +36,10 @@ android {
         }
     }
     dataBinding{
-        enabled = true
+        enabled true
     }
 
+    buildToolsVersion '25.0.2'
 }
 
 dependencies {
@@ -47,7 +47,7 @@ dependencies {
     androidTestCompile("com.android.support.test.espresso:espresso-core:$espresso_version", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
+    annotationProcessor 'com.android.databinding:compiler:2.3.0'
     // support libs
     compile "com.android.support:support-v4:$support_lib_version"
     compile "com.android.support:appcompat-v7:$support_lib_version"
@@ -68,7 +68,7 @@ dependencies {
 
     // dagger
     compile "com.google.dagger:dagger:$dagger_version"
-    apt "com.google.dagger:dagger-compiler:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
     provided "javax.annotation:jsr250-api:$javax_annotation_version"
 
     // glide
