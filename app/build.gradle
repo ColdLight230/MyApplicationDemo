@@ -47,7 +47,6 @@ dependencies {
     androidTestCompile("com.android.support.test.espresso:espresso-core:$espresso_version", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    annotationProcessor 'com.android.databinding:compiler:2.3.0'
     // support libs
     compile "com.android.support:support-v4:$support_lib_version"
     compile "com.android.support:appcompat-v7:$support_lib_version"
