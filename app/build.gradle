@@ -1,11 +1,14 @@
 apply plugin: 'com.android.application'
 
+// lambda
+apply plugin: 'me.tatarka.retrolambda'
+
 android {
     compileSdkVersion compile_sdk_version
     buildToolsVersion build_tools_version
 
     defaultConfig {
-        applicationId "com.hhly.myapplicationdemo"
+        applicationId "com.hhly.practice"
         minSdkVersion min_sdk_version
         targetSdkVersion target_sdk_version
         versionCode version_code
@@ -39,6 +42,11 @@ android {
         enabled true
     }
 
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildToolsVersion '25.0.2'
 }
 
@@ -56,7 +64,6 @@ dependencies {
     compile "com.android.support:percent:$support_lib_version"
 
     // ui
-    compile "com.jaeger.statusbaruitl:library:$statusbar_util_version"
     compile "com.github.chrisbanes:PhotoView:$photo_view_version"
     compile "com.yqritc:android-scalablevideoview:$video_view_version"
 

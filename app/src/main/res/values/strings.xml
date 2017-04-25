@@ -1,8 +1,4 @@
 <resources>
     <string name="app_name">MyApplicationDemo</string>
-
-
     <string name="and">\u0026</string>
-
-
 </resources>

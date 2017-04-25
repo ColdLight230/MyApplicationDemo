@@ -1,4 +1,4 @@
-package com.hhly.practice.ui.android;
+package com.hhly.practice.ui.article;
 
 import com.hhly.data.bean.AndroidBean;
 import com.hhly.practice.core.BasePresenter;
@@ -14,11 +14,11 @@ import rx.Subscriber;
  * 作    者：xul@13322.com
  * 时    间：2016/10/14
  */
-public class AndroidPresenter extends BasePresenter<AndroidContract.View> implements AndroidContract.Presneter {
+public class ArticlePresenter extends BasePresenter<ArticleContract.View> implements ArticleContract.Presneter {
 
     private List<AndroidBean> mDatas = new ArrayList<>();
 
-    public AndroidPresenter(AndroidContract.View view){
+    public ArticlePresenter(ArticleContract.View view){
         super(view);
     }
 

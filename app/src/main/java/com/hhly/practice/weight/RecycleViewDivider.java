@@ -1,4 +1,4 @@
-package com.hhly.practice;
+package com.hhly.practice.weight;
 
 import android.content.Context;
 import android.content.res.TypedArray;

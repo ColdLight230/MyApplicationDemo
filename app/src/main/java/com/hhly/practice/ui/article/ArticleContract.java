@@ -1,4 +1,4 @@
-package com.hhly.practice.ui.android;
+package com.hhly.practice.ui.article;
 
 import com.hhly.data.bean.AndroidBean;
 import com.hhly.practice.core.IPresenter;
@@ -11,13 +11,13 @@ import java.util.List;
  * 作    者：xul@13322.com
  * 时    间：2016/10/14
  */
-public interface AndroidContract {
+public interface ArticleContract {
 
      interface View extends IView{
          void loadDataFinish();
     }
 
-    interface Presneter extends IPresenter<AndroidContract.View>{
+    interface Presneter extends IPresenter<ArticleContract.View>{
         void onLoadingData(int pageSize, int pageIndex);
         List<AndroidBean> getArticle();
     }
